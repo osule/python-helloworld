@@ -1,14 +1,14 @@
 namespace:
   name: staging
-replica:
-  count: 1
+replicaCount: 1
 image:
   repository: nginx
   tag: 1.18.0
   pullPolicy: IfNotPresent
 resources:
-  CPU: 50m
-  memory: 128Mi
+  requests:
+    CPU: 50m
+    memory: 128Mi
 service:
   type: ClusterIP
   port: 8111

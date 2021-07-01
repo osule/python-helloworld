@@ -1,14 +1,14 @@
 namespace:
   name: demo
-replica:
-  count: 2
+replicaCount: 2
 image:
   repository: nginx
   tag: 1.17.0
   pullPolicy: IfNotPresent
 resources:
-  CPU: 70m
-  memory: 256Mi
+  requests:
+    CPU: 70m
+    memory: 256Mi
 service:
   type: ClusterIP
   port: 80

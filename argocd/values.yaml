@@ -1,14 +1,14 @@
 namespace:
   name: demo
-replica:
-  count: 3
+replicaCount: 3
 image:
   repository: nginx
   tag: alpine
   pullPolicy: IfNotPresent
 resources:
-  CPU: 50m
-  memory: 256Mi
+  requests:
+    CPU: 50m
+    memory: 256Mi
 service:
   type: ClusterIP
   port: 8111
